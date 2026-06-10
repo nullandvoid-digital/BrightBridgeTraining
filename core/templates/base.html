@@ -1,27 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="This is a Django Starter Project, not a real website." />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is a preconfigured Django Project."/>
+    <meta name="keywords" content="">
 
-      <title>{% block title %}{% endblock title %}</title>
+    <title>{% block title %}{% endblock title %}</title> <!-- TODO: populate title blocks in children -->
 
-      <link rel="stylesheet" href="{% static 'css/starter.css' %}">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="favicon" href="{% static 'img/favicon.ico' %}">
 
-      {% block extra-head %}{% endblock extra-head %}
-  </head>
-	<body class="has-navbar-fixed-top">
-        <section class="section" id="header">
-            {% include "navbar.html" %}
-        </section>
-        <section class="section" id="content">
-            {% block content %}{% endblock content %}
-        </section>
-        <section class="section" id="footer">
-            {% include "footer.html" %}
-        </section>
-	</body>
+    {% block extra-head %}{% endblock extra-head %}
+</head>
+<body>
+{% include "navbar.html" %}
+{% block content %}{% endblock content %}
+{% include "footer.html" %}
+</body>
 </html>

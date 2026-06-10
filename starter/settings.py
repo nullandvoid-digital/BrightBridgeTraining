@@ -15,6 +15,9 @@ import os
 import tempfile
 import sys
 
+import core.context_processors
+from core.utilities import load_secret
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,7 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "whitenoise.runserver_nostatic",  # Use Whitenoise w/ `manage.py runserver`
     "django.contrib.staticfiles",
-    'core.apps.CoreConfig',
+    "core.apps.CoreConfig",
 ]
 
 MIDDLEWARE = [
@@ -83,8 +86,7 @@ ROOT_URLCONF = "starter.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -92,6 +94,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "core.context_processors.page_context",
+                "core.context_processors.nav_links",
             ],
         },
     },
@@ -160,5 +164,4 @@ MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
