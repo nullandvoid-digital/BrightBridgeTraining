@@ -1,18 +1,16 @@
 [project]
-    name = "django-starter"
-    version = "0.2.0"
-    description = ""
-    authors = [
-        {name = "Kyle Jensen",email = "kyle@nullandvoid.digital"}
-    ]
-    requires-python = ">=3.12"
-    dependencies = [
-        "python~=3.12",
-        "django~=5.1",
-        "whitenoise~=6.7",
-        "pip~=25.0.1"
-
-    ]
+name = "BrightBridge Training & Onboarding"
+version = "0.2.0"
+description = ""
+authors = [
+    {name = "Kyle Jensen",email = "kyle@nullandvoid.digital"}
+]
+requires-python = ">=3.12"
+dependencies = [
+    "django~=6.0",
+    "whitenoise~=6.7",
+    "pip>=26.1",
+]
 [dependency-groups]
 dev = [
     "ipython",

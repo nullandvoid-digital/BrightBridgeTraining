@@ -45,8 +45,3 @@ class NavLinkAdmin(admin.ModelAdmin):
 @admin.register(ContentType)
 class ContentTypeAdmin(admin.ModelAdmin):
     pass
-
-
-@admin.register(SupportTicket)
-class SupportMessageAdmin(admin.ModelAdmin):
-    pass

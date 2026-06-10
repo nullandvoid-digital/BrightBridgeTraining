@@ -1,8 +1,12 @@
 import os
 from pathlib import Path
 
+"""
+Uncomment these imports to use CustomSVGPathImage and make_with_bg with django-allauth
+
 from qrcode import QRCode
 from qrcode.image.svg import SvgPathImage
+"""
 
 home = Path.home()
 
@@ -28,7 +32,9 @@ def load_secret(var: str, default=None) -> str:
     )
 
 
-# The following are for use with django-allauth to add a white fill to the QR code for use on dark themes
+"""
+The following are for use with django-allauth to add a white fill to the QR code for use on dark themes
+
 class CustomSvgPathImage(SvgPathImage):
     def __init__(self, *args, **kw):
         self.background = kw.pop("back_color", None)
@@ -40,3 +46,4 @@ def make_with_bg(data=None, **kwargs):
     qr = QRCode(**kwargs)
     qr.add_data(data)
     return qr.make_image(back_color="#ffffff")
+    """
