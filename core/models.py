@@ -1,20 +1,23 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group, Permission
+
 # from django.contrib.postgres.fields import ArrayField
 from django.core.exceptions import ObjectDoesNotExist
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    role = models.OneToOneField(Group, on_delete=models.CASCADE, null=True, blank=True)
     data = models.JSONField(default=dict)
 
     class Meta:
-        db_table_comment = (
+        """db_table_comment = (
             "Profiles for learner tracking linked to django.contrib.auth.user"
-        )
+        )"""
 
     def __str__(self):
         return self.user.username
+
 
 class Page(models.Model):
     app = models.CharField(max_length=25, null=True, blank=True)
@@ -30,7 +33,7 @@ class Page(models.Model):
     blurb = models.TextField(null=True, blank=True)
 
     class Meta:
-        db_table_comment = "Stores data for Page content and Navbar Links"
+        """db_table_comment = "Stores data for Page content and Navbar Links""" ""
 
     def __str__(self):
         return self.title

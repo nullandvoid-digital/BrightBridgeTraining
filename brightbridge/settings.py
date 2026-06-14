@@ -38,12 +38,16 @@ ALLOWED_HOSTS = load_secret("ALLOWED_HOSTS").split(":")
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "whitenoise.runserver_nostatic",  # Use Whitenoise w/ `manage.py runserver`
     "django.contrib.staticfiles",
     "core.apps.CoreConfig",
+    "data_collection.apps.DataCollectionConfig",
 ]
 
 MIDDLEWARE = [
@@ -55,6 +59,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 # Debug Toolbar and Extensions only when `DEBUG = False` and not running tests
@@ -81,6 +86,15 @@ if ENABLE_DEBUG_TOOLBAR:
     }
     RUNSERVERPLUS_POLLER_RELOADER_INTERVAL = 1
 
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by email
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+SOCIALACCOUNT_PROVIDERS = {}
+
 ROOT_URLCONF = "brightbridge.urls"
 
 TEMPLATES = [
@@ -94,6 +108,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.request",
                 "core.context_processors.page_context",
                 "core.context_processors.nav_links",
             ],

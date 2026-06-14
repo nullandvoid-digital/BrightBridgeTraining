@@ -1,5 +1,5 @@
 [project]
-name = "BrightBridge Training & Onboarding"
+name = "brightbridge_training_and_onboarding"
 version = "0.2.0"
 description = ""
 authors = [
@@ -10,6 +10,7 @@ dependencies = [
     "django~=6.0",
     "whitenoise~=6.7",
     "pip>=26.1",
+    "django-allauth[socialaccount]>=65.18.0",
 ]
 [dependency-groups]
 dev = [
