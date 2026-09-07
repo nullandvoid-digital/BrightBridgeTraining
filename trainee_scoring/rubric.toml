@@ -1,0 +1,58 @@
+[attendance]
+[attendance.on_time]
+# Whether the trainee arrived on time (excused tardiness or absence excluded)
+1 = "No show"
+2 = "Arrives >15m late"
+3 = "Arrives on time"
+
+[attendance.dress]
+# Whether the trainee was appropriately dressed
+1 = "Dressed inappropriately"
+2 = "Dressed appropriately"
+
+[attendance.duration]
+# Whether the trainee was present for the full duration of the training (excused tardiness or absence excluded)
+1 = "Misses more than 15 minutes or takes excessive breaks"
+2 = "Misses up to 15 minutes or takes occasional breaks"
+3 = "Present and participates for entire session"
+
+[engagement]
+[engagement.answers]
+# Whether the trainee responds to questions/SDs
+1 = "Unable to answer/Refuses to attempt"
+2 = "Attempts to answer when prompted"
+3 = "Attempts to answer independently"
+4 = "Has to be banned from answering to give others chances"
+
+[engagement.focus]
+# Whether the trainee is focused on and engaged with the training
+1 = "Regularly distracted, on personal devices, in loud environment, camera off, etc. AND unresponsive"
+2 = "Regularly distracted, on personal devices, in loud environment, camera off, etc. BUT responsive"
+3 = "Not distracted, in quiet environment, camera on, responsive, etc."
+
+[engagement.roleplay]
+# Whether the trainee engages in roleplays
+1 = "Does not engage in roleplay, prompted or independently"
+2 = "Engages in roleplay when prompted"
+3 = "Engages in roleplay independently"
+
+[engagement.peer_interactions]
+# How the trainee interacts with peers
+
+[engagement.staff_interactions]
+# How the trainee interacts with staff
+
+[feedback]
+# How the trainee responds to feedback
+[feedback.accepts]
+# Accepts feedback from staff
+1 = "Does not accept feedback or responds combatively/defensively"
+2 = "Reluctant to accept feedback but does"
+3 = "Willingly accepts feedback from staff"
+
+[feedback.implements]
+# Implements feedback from staff
+1 = "Does not implement feedback"
+2 = "Delays implementation of feedback"
+3 = "Immediately implements feedback from staff"
+

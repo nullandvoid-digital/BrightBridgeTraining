@@ -4,10 +4,11 @@ from django.dispatch import receiver
 from django.shortcuts import render, redirect
 from django.views.generic import FormView
 
-from core.models import Profile, SupportTicket
-from quiz.models import Result as QResult
+from core.models import Profile  # , SupportTicket
+
+"""from quiz.models import Result as QResult
 from safmeds.models import Result as SResult
-from .forms import SupportTicketForm, UserUpdateForm
+from .forms import SupportTicketForm, UserUpdateForm"""
 
 
 @receiver(email_confirmed)

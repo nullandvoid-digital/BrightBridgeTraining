@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User, Group, Permission
+from django.conf import settings
 
 # from django.contrib.postgres.fields import ArrayField
 from django.core.exceptions import ObjectDoesNotExist
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     role = models.OneToOneField(Group, on_delete=models.CASCADE, null=True, blank=True)
     data = models.JSONField(default=dict)
 

@@ -21,7 +21,6 @@ from core.utilities import load_secret
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core.apps.CoreConfig",
     "data_collection.apps.DataCollectionConfig",
+    "trainee_scoring.apps.TraineeScoringConfig",
 ]
 
 MIDDLEWARE = [
@@ -77,6 +77,7 @@ if ENABLE_DEBUG_TOOLBAR:
         "SHOW_TOOLBAR_CALLBACK": lambda request: not any(
             request.path.startswith(p) for p in hide_toolbar_patterns
         ),
+        "ROOT_TAG_EXTRA_ATTRS": "hx-preserve",
     }
 
     # django-extensions
@@ -85,6 +86,20 @@ if ENABLE_DEBUG_TOOLBAR:
         "group_models": True,
     }
     RUNSERVERPLUS_POLLER_RELOADER_INTERVAL = 1
+
+EXCLUDE_FROM_PAGE = (
+    "admin",
+    "auth",
+    "contenttypes",
+    "sessions",
+    "messages",
+    "runserver_nostatic",
+    "staticfiles",
+    "humanize",
+    "debug_toolbar",
+    "django_extensions",
+)
+
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`

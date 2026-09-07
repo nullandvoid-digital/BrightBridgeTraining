@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Program View{% endblock title %}
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title"><strong>Program</strong>{{ program.behavior }}</h1>
+            <p><strong>Data Type:</strong>{{ program.type }}</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for event in program.events %}
+                    <tr>
+                    <th>{{ event.index }}</th>
+                    <td>{{ event.event }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock content %}
