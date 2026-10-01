@@ -31,6 +31,7 @@ SECRET_KEY = load_secret("SECRET_KEY")
 DEBUG = load_secret("DEBUG", False) == "True"
 
 ALLOWED_HOSTS = load_secret("ALLOWED_HOSTS").split(":")
+INTERNAL_IPS = ()
 
 
 # Application definition

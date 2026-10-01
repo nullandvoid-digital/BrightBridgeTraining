@@ -12,6 +12,7 @@ dependencies = [
     "pip>=26.1",
     "django-allauth[socialaccount]>=65.18.0",
     "django-shinobi>=1.4.2",
+    "gunicorn>=26.2.0",
 ]
 [dependency-groups]
 dev = [
