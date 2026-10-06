@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <p class="has-text-centered">
+        <a href="{% url 'scoring' %}" class="button is-primary">Home</a>
+    </p>
+    <section class="section has-text-centered">
+        <form method="post">
+            {% csrf_token %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Trainee</th>
+                    <th>On Time</th>
+                    <th>Dress</th>
+                    <th>Duration</th>
+                    <th>Answers</th>
+                    <th>Focus</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for form in formset %}
+                    <tr>
+                        <td>{{ form.trainee }}{{ form.trainee.value.name }}</td>
+                        <td>{{ form.on_time }}</td>
+                        <td>{{ form.dress }}</td>
+                        <td>{{ form.duration }}</td>
+                        <td>{{ form.answers }}</td>
+                        <td>{{ form.focus }}</td>
+                        <td>{{ form.roleplay }}</td>
+                        <td>{{ form.accepts }}</td>
+                        <td>{{ form.implements }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {{ formset.management_form }}
+            <button class="button">Submit</button>
+        </form>
+    </section>
+{% endblock content %}

@@ -125,7 +125,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.request",
-                "core.context_processors.page_context",
+                # "core.context_processors.page_context",
                 "core.context_processors.nav_links",
             ],
         },

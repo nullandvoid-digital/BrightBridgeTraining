@@ -20,8 +20,5 @@ class ReportCardAdmin(admin.ModelAdmin):
         "duration",
         "answers",
         "focus",
-        "roleplay",
-        "accepts",
-        "implements",
     )
     list_filter = ("trainee",)

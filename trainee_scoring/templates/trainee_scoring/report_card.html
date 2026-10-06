@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "components/_hero.html" with title=trainee.name %}
+    <p class="has-text-centered">
+        <a href="{% url 'scoring' %}" class="button is-primary">Home</a>
+    </p>
+    <section class="section">
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column fixed-grid has-2-cols has-text-centered">
+                <div class="grid">
+                    <div class="box cell">
+                        <h2 class="title">On Time</h2>
+                        <div class="columns is-mobile">
+                            <div class="column">
+                                <h3 class="subtitle">Day 1</h3>
+                                <p>{{ reportcards.0.on_time }}</p>
+                            </div>
+                            <div class="column">
+                                <h3 class="subtitle">Day 2</h3>
+                                <p>{{ reportcards.1.on_time }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box cell">
+                        <h2 class="title">Dress</h2>
+                        <div class="columns is-mobile">
+                            <div class="column">
+                                <h3 class="subtitle">Day 1</h3>
+                                <p>{{ reportcards.0.dress }}</p>
+                            </div>
+                            <div class="column">
+                                <h3 class="subtitle">Day 2</h3>
+                                <p>{{ reportcards.1.dress }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box cell">
+                        <h2 class="title">Duration</h2>
+                        <div class="columns is-mobile">
+                            <div class="column">
+                                <h3 class="subtitle">Day 1</h3>
+                                <p>{{ reportcards.0.duration }}</p>
+                            </div>
+                            <div class="column">
+                                <h3 class="subtitle">Day 2</h3>
+                                <p>{{ reportcards.1.duration }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box cell">
+                        <h2 class="title">Answers</h2>
+                        <div class="columns is-mobile">
+                            <div class="column">
+                                <h3 class="subtitle">Day 1</h3>
+                                <p>{{ reportcards.0.answers }}</p>
+                            </div>
+                            <div class="column">
+                                <h3 class="subtitle">Day 2</h3>
+                                <p>{{ reportcards.1.answers }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box cell">
+                        <h2 class="title">Focus</h2>
+                        <div class="columns is-mobile">
+                            <div class="column">
+                                <h3 class="subtitle">Day 1</h3>
+                                <p>{{ reportcards.0.focus }}</p>
+                            </div>
+                            <div class="column">
+                                <h3 class="subtitle">Day 2</h3>
+                                <p>{{ reportcards.1.focus }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="level is-mobile">
+            <div class="level-item has-text-centered">
+                <div>
+                    <h3 class="heading">Total</h3>
+                    <p class="title">{{ actual }}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <h3 class="heading">Maximum</h3>
+                    <p class="title">{{ total }}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <h3 class="heading">Score</h3>
+                    <p class="title">{{ percent }}%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

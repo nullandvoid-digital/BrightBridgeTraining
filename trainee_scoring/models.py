@@ -57,7 +57,7 @@ class ReportCard(models.Model):
         3: 3,
     }
 
-    trainee = models.OneToOneField(Trainee, on_delete=models.CASCADE)
+    trainee = models.ForeignKey(Trainee, on_delete=models.CASCADE)
     day = models.DateField()
     on_time = models.IntegerField(
         verbose_name="Did the trainee arrive on time (excused tardiness or absence excluded)?",
@@ -99,14 +99,6 @@ class ReportCard(models.Model):
         ],
         default=1,
     )
-    roleplay = models.IntegerField(
-        verbose_name="Did the trainee engage in roleplay?",
-        choices=ROLEPLAY,
-        validators=[
-            MaxValueValidator(r.max_value("ROLEPLAY")),
-        ],
-        default=1,
-    )
     """
     peer_interactions = models.IntegerField(
         verbose_name="Did the trainee interact appropriately with their peers?",
@@ -124,7 +116,6 @@ class ReportCard(models.Model):
         ],
         default=1,
     )
-    """
     accepts = models.IntegerField(
         verbose_name="Did the trainee accept feedback from staff?",
         choices=ACCEPTS,
@@ -140,4 +131,4 @@ class ReportCard(models.Model):
             MaxValueValidator(r.max_value("IMPLEMENTS")),
         ],
         default=1,
-    )
+    )"""

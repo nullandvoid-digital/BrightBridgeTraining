@@ -1,9 +1,9 @@
 [project]
-name = "brightbridge_training_and_onboarding"
+name = "BrightBridgeTraining"
 version = "0.2.0"
 description = ""
 authors = [
-    {name = "Kyle Jensen",email = "kyle@nullandvoid.digital"}
+    { name = "Kyle Jensen", email = "kyle@nullandvoid.digital" }
 ]
 requires-python = ">=3.12"
 dependencies = [

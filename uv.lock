@@ -198,7 +198,7 @@ d = [
 ]
 
 [[package]]
-name = "brightbridge-training-and-onboarding"
+name = "brightbridgetraining"
 version = "0.2.0"
 source = { virtual = "." }
 dependencies = [

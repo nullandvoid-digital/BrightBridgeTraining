@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Rubric:
-    DAYS = {1: "Day One", 2:"Day Two"}
+    DAYS = {1: "Day One", 2: "Day Two"}
     # ATTENDANCE
     ON_TIME = {1: "No show", 2: "Arrives >15m late", 3: "Arrives on time"}
     DRESS = {1: "Dressed inappropriately", 2: "Dressed appropriately"}
@@ -25,13 +25,13 @@ class Rubric:
         2: "Regularly distracted, on personal devices, in loud environment, camera off, etc. BUT responsive",
         3: "Not distracted, in quiet environment, camera on, responsive, etc.",
     }
-    ROLEPLAY = {
+    """ROLEPLAY = {
         1: "Does not engage in roleplay, prompted or independently",
         2: "Engages in roleplay when prompted",
         3: "Engages in roleplay independently",
     }
-    PEER_INTERACTIONS = {}
-    STAFF_INTERACTIONS = {}
+    # PEER_INTERACTIONS = {}
+    # STAFF_INTERACTIONS = {}
 
     # FEEDBACK
     ACCEPTS = {
@@ -43,7 +43,7 @@ class Rubric:
         1: "Does not implement feedback",
         2: "Delays implementation of feedback",
         3: "Immediately implements feedback from staff",
-    }
+    }"""
 
     @classmethod
     def keystring(cls, attr):

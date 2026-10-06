@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "components/_hero.html" with title="Trainees" %}
+    <p class="has-text-centered">
+        <a href="{% url 'scoring' %}" class="button is-primary">Home</a>
+    </p>
+    <section class="section has-text-centered">
+        <div class="columns is-mobile">
+            <div class="column"></div>
+            <div class="column>">
+                <ul class="buttons are-medium">
+                    {% for trainee in trainees %}
+                        <li class="button is-fullwidth"><a
+                                href="{% url 'report_card' trainee.id %}">{{ trainee.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="column"></div>
+        </div>
+    </section>
+{% endblock content %}

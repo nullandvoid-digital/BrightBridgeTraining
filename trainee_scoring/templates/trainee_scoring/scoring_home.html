@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "components/_hero.html" with title="Trainee Management" extra_class="is-warning" %}
+    <section class="section">
+        <div class="buttons is-centered are-large">
+            <a class="button is-primary is-fullwidth" href="{% url 'report_cards' %}">Trainee List</a>
+            <a class="button is-info is-fullwidth" href="{% url 'grading_sheet' %}">Grading Session</a>
+        </div>
+    </section>
+{% endblock content %}
